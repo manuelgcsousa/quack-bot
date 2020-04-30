@@ -20,8 +20,8 @@ module.exports = {
 			}
 
 			let msg = 
-				"- Name: " + cmd.name + '\n'
-				"- Description: " + cmd.description
+				"* Name: " + cmd.name + '\n'
+				"* Description: " + cmd.description
 			;
 
 			return message.channel.send(msg);
