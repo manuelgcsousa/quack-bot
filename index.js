@@ -1,5 +1,7 @@
 'use strict';
 
+require('dotenv').config();
+
 const prefix = '$';
 const Reddit = require('./utils/reddit.js');
 const Discord = require('discord.js');
