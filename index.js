@@ -1,7 +1,7 @@
 'use strict';
 
 const aws = require('aws-sdk');
-let s3 = new aws.s3({
+let s3 = new aws.S3({
 	token: process.env.BOT_TOKEN
 });
 
@@ -52,5 +52,5 @@ client.on('message', async message => {
 });
 
 // Login bot using unique token.
-client.login(token);
+client.login(s3.token);
 
