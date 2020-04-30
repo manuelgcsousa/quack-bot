@@ -1,12 +1,5 @@
 'use strict';
 
-const aws = require('aws-sdk');
-let s3 = new aws.S3({
-	token: process.env.BOT_TOKEN
-});
-
-console.log(process.env.BOT_TOKEN);
-
 const prefix = '$';
 const Reddit = require('./utils/reddit.js');
 const Discord = require('discord.js');
@@ -54,5 +47,4 @@ client.on('message', async message => {
 });
 
 // Login bot using unique token.
-client.login(s3.token);
-
+client.login(process.env.BOT_TOKEN);
