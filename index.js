@@ -1,6 +1,11 @@
 'use strict';
 
-const { prefix, token } = require('./config.json');
+const aws = require('aws-sdk');
+let s3 = new aws.s3({
+	token: process.env.BOT_TOKEN
+});
+
+const prefix = '$';
 const Reddit = require('./utils/reddit.js');
 const Discord = require('discord.js');
 const fs = require('fs');
