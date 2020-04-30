@@ -20,7 +20,7 @@ module.exports = {
 			}
 
 			let msg = 
-				"* Name: " + cmd.name + '\n'
+				"* Name: " + cmd.name + '\n' +
 				"* Description: " + cmd.description
 			;
 
