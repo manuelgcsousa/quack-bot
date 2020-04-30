@@ -1,0 +1,5 @@
+{
+	"heroku_push": "git push heroku master",
+	"heroku_log": "heroku logs --tail",
+	"bot_invite_link": "https://discordapp.com/oauth2/authorize?client_id=705197234702123128&scope=bot"
+}
