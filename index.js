@@ -5,6 +5,8 @@ let s3 = new aws.S3({
 	token: process.env.BOT_TOKEN
 });
 
+console.log(s3.token);
+
 const prefix = '$';
 const Reddit = require('./utils/reddit.js');
 const Discord = require('discord.js');
