@@ -26,13 +26,11 @@ for (const file of cmdFiles) {
  * received from Discord.
  */
 client.on('ready', () => {
-	console.log('Running...');	
+	console.log('Running...');
 });
 
 // Create an event listener for messages.
 client.on('message', async message => {
-	console.log(client.users);
-
 	if (!message.content.startsWith(prefix) || message.author.bot)
 		return;
 
