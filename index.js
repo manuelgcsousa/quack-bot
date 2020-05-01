@@ -31,6 +31,8 @@ client.on('ready', () => {
 
 // Create an event listener for messages.
 client.on('message', async message => {
+	console.log(client.users);
+
 	if (!message.content.startsWith(prefix) || message.author.bot)
 		return;
 
