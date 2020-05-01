@@ -21,10 +21,15 @@ module.exports = {
 		voiceChannel
 			.join()
 			.then(connection => {
-				const stream = ytdl(song_url, { filter: 'audioonly' });
-				const dispatcher = connection.play(stream);
+				if (song_url.includes('www.youtube.com'))
+					stream = ytdl(song_url, { filter: 'audioonly' });
+				else
+					stream = song_url;
+
+				const dispatcher = connection.play(stream, { volume: 0.5 });
 
 				dispatcher.on('finish', () => voiceChannel.leave());
+				dispatcher.destroy(); // end the stream.
 			})
 			.catch(err => {
 				return message.reply('There was an error an playing the requested song!');
