@@ -41,7 +41,7 @@ client.on('message', async message => {
 	//if (!client.commands.has(cmd))
 	//	return;
 	
-	if (message.content === '!play') {
+	if (message.content === '$play') {
 		console.log('boas');
 		if (message.channel.type !== 'text') return;
 
