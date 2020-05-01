@@ -6,7 +6,6 @@ const prefix = '$';
 const Reddit = require('./utils/reddit.js');
 const Discord = require('discord.js');
 const fs = require('fs');
-const ytdl = require('ytdl-core');
 
 // Create an instance of a Discord client.
 const client = new Discord.Client();

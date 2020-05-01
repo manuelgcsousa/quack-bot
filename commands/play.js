@@ -1,5 +1,4 @@
-const axios = require('axios');
-const Discord = require('discord.js');
+const ytdl = require('ytdl-core');
 
 module.exports = {
 	name: 'play',
@@ -18,6 +17,7 @@ module.exports = {
 		}
 
 		const song_url = args[0];
+		console.log(song_url);
 
 		voiceChannel
 			.join()
@@ -28,6 +28,7 @@ module.exports = {
 				dispatcher.on('end', () => voiceChannel.leave());
 			})
 			.catch(err => {
+				console.log(err);
 				return message.reply('There was an error an playing the requested song!');
 			});
 	}
