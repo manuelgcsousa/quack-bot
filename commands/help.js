@@ -16,12 +16,12 @@ module.exports = {
 			const cmd = commands.get(cmd_name);
 
 			if (!cmd) {
-				return message.reply('That\'s not a valid command!');
+				return message.reply('that\'s not a valid command!');
 			}
 
 			let msg = 
-				"* Name: " + cmd.name + '\n' +
-				"* Description: " + cmd.description
+				"➤ Name: " + cmd.name + '\n' +
+				"➤ Description: " + cmd.description
 			;
 
 			return message.channel.send(msg);
