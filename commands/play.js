@@ -27,7 +27,6 @@ module.exports = {
 				dispatcher.on('finish', () => voiceChannel.leave());
 			})
 			.catch(err => {
-				console.log(err);
 				return message.reply('There was an error an playing the requested song!');
 			});
 	}

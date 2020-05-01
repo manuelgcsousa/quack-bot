@@ -4,6 +4,8 @@ const axios = require('axios');
 const _SUB = [
 	'memes',
 	'dankmemes',
+	'meme',
+	'dank_meme',
 	'MemeEconomy',
 	'me_irl'
 ];
