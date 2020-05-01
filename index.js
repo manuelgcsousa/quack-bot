@@ -6,6 +6,7 @@ const prefix = '$';
 const Reddit = require('./utils/reddit.js');
 const Discord = require('discord.js');
 const fs = require('fs');
+const ytdl = require('ytdl-core');
 
 // Create an instance of a Discord client.
 const client = new Discord.Client();
@@ -40,6 +41,24 @@ client.on('message', async message => {
 	if (!client.commands.has(cmd))
 		return;
 	
+	if (message.content === '!play') {
+		console.log('boas');
+		if (message.channel.type !== 'text') return;
+
+		const voiceChannel = message.member.voice.channel;
+
+		if (!voiceChannel) {
+			return message.reply('please join a voice channel first!');
+		}
+
+		voiceChannel.join().then(connection => {
+			const stream = ytdl('https://www.youtube.com/watch?v=EOxj2ROIxok', { filter: 'audioonly' });
+			const dispatcher = connection.play(stream);
+
+			dispatcher.on('end', () => voiceChannel.leave());
+		});
+	}	
+
 	try {
 		client.commands.get(cmd).execute(message, args);
 	} catch (error) {
