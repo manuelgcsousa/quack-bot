@@ -16,7 +16,7 @@ module.exports = {
 			return message.reply('Please join a voice channel first!');
 		}
 		
-		voiceChannel.end();
+		voiceChannel.stop();
 		
 		return message.reply('Quack-bot has stopped the sonoro!');
 	}
