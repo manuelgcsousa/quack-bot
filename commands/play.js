@@ -17,7 +17,6 @@ module.exports = {
 		}
 
 		const song_url = args[0];
-		console.log(song_url);
 
 		voiceChannel
 			.join()
@@ -25,7 +24,7 @@ module.exports = {
 				const stream = ytdl(song_url, { filter: 'audioonly' });
 				const dispatcher = connection.play(stream);
 
-				dispatcher.on('end', () => voiceChannel.leave());
+				dispatcher.on('finish', () => voiceChannel.leave());
 			})
 			.catch(err => {
 				console.log(err);
