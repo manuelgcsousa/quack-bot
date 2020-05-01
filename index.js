@@ -38,28 +38,8 @@ client.on('message', async message => {
 	let args = message.content.slice(prefix.length).split(/ +/);	
 	let cmd = args.shift().toLowerCase();
 
-	/*
 	if (!client.commands.has(cmd))
-		return;
-	*/
-	
-	if (message.content === '$play') {
-		console.log('boas');
-		if (message.channel.type !== 'text') return;
-
-		const voiceChannel = message.member.voice.channel;
-
-		if (!voiceChannel) {
-			return message.reply('please join a voice channel first!');
-		}
-
-		voiceChannel.join().then(connection => {
-			const stream = ytdl('https://www.youtube.com/watch?v=EOxj2ROIxok', { filter: 'audioonly' });
-			const dispatcher = connection.play(stream);
-
-			dispatcher.on('end', () => voiceChannel.leave());
-		});
-	}	
+		return;	
 
 	try {
 		client.commands.get(cmd).execute(message, args);
