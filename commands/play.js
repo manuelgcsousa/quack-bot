@@ -13,7 +13,7 @@ module.exports = {
 		const voiceChannel = message.member.voice.channel;
 
 		if (!voiceChannel) {
-			return message.reply('Please join a voice channel first!');
+			return message.reply('please join a voice channel first!');
 		}
 
 		const song_url = args[0];
