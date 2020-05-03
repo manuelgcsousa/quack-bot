@@ -2,16 +2,16 @@ const axios = require('axios');
 const Discord = require('discord.js');
 
 module.exports = {
-	name: 'doge',
-	description: 'Random pictures of our boi doge.',
+	name: 'duck',
+	description: 'Random pictures of beautiful quackerinos.',
 	execute(message, args) {
 		if (args.length !== 0)
 			return;
 
 		axios
-			.get('https://shibe.online/api/shibes')
+			.get('https://random-d.uk/api/v2/random')
 			.then(res => {
-				let img = res.data[0];
+				let img = res.data.url;
 
 				const embed = new Discord.MessageEmbed()
 					.setColor('#ebb327')

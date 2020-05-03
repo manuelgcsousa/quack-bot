@@ -12,7 +12,7 @@ module.exports = {
 			.getRandomPost()
 			.then(post => {
 				const embed = new Discord.MessageEmbed()
-					.setColor('#0099ff')
+					.setColor('#ebb327')
 					.setTitle(post.title)
 					.setDescription('SOURCE: \'r/' + post.subreddit + '\'')
 					.setImage(post.url);
