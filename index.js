@@ -3,7 +3,7 @@
 require('dotenv').config();
 
 const prefix = '$';
-const Reddit = require('./utils/reddit.js');
+const Reddit = require('./bot/utils/reddit.js');
 const Discord = require('discord.js');
 const fs = require('fs');
 
@@ -13,9 +13,9 @@ const client = new Discord.Client();
 client.commands = new Discord.Collection();
 
 // Read all file commands and set them to the discord collection.
-const cmdFiles = fs.readdirSync('./commands').filter(file => file.endsWith('.js'));
+const cmdFiles = fs.readdirSync('./bot/commands').filter(file => file.endsWith('.js'));
 for (const file of cmdFiles) {
-	let cmd = require('./commands/' + file);
+	let cmd = require('./bot/commands/' + file);
 
 	client.commands.set(cmd.name, cmd);
 }

@@ -5,6 +5,6 @@ module.exports = {
 		if (args.length !== 0)
 			return;
 
-		message.channel.send('cartuxeira carregada oh filho!');
+		message.channel.send('cartucheira carregada oh filho!');
 	}
 };

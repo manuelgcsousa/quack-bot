@@ -2,7 +2,7 @@ const axios = require('axios');
 const Discord = require('discord.js');
 
 module.exports = {
-	name: 'duck',
+	name: 'quack',
 	description: 'Random pictures of beautiful quackerinos.',
 	execute(message, args) {
 		if (args.length !== 0)
