@@ -4,7 +4,7 @@ const Discord = require('discord.js');
 
 module.exports = {
 	name: 'store',
-	description: 'Guardar a lista daqueles mambos que vocês sabem mpts.\n\nRetrieve store: $store\nAdd value: $store add *key* *value*\nRemove value: $store rm *key*\nClean store: $store clean',
+	description: 'Guardar a lista daqueles mambos que vocês sabem mpts.\n\nRetrieve store: $store\nAdd value: $store add *key* *value*\nRemove value: $store rm *key*\nClean store (CARE!): $store clean',
 	async execute(message, args) {
 		switch (args.length) {
 			case 0:
