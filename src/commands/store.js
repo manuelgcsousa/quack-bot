@@ -6,7 +6,7 @@ module.exports = {
 	name: 'store',
 	description: 'Guardar a lista daqueles mambos que vocês sabem mpts.\n\nRetrieve store: $store\nAdd value: $store add *key* *value*\nRemove value: $store rm *key*\nClean store (CARE!): $store clean',
 	async execute(message, args) {
-		if (message.guild.id === '688126060113559591') {
+		if (message.guild.id === process.env.AQUELES_PATOS_ID) {
 			switch (args.length) {
 				case 0:
 					try {
