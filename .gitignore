@@ -1,3 +1,4 @@
 .DS_Store
 .env
+data/store.json
 node_modules

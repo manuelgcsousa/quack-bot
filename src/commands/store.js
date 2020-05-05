@@ -1,12 +1,21 @@
+const fs = require('fs');
 const jsonfile = require('jsonfile');
-const store_db = (__dirname + '/../../data/store.json');
 const Discord = require('discord.js');
+
+const store_db = (__dirname + '/../../data/store.json');
+if (!fs.existsSync())
+	jsonfile.writeFileSync(store_db, {});
 
 module.exports = {
 	name: 'store',
 	description: 'Guardar a lista daqueles mambos que vocês sabem mpts.\n\nRetrieve store: $store\nAdd value: $store add *key* *value*\nRemove value: $store rm *key*\nClean store (CARE!): $store clean',
 	async execute(message, args) {
-		if (message.guild.id === process.env.AQUELES_PATOS_ID) {
+		const auth = (
+			message.guild.id === process.env.AQUELES_PATOS_ID || 
+			message.guild.id === process.env.GCSOUSA_TEST_SERVER_ID
+		);
+
+		if (auth) {
 			switch (args.length) {
 				case 0:
 					try {
