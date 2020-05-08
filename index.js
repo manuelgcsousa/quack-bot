@@ -4,6 +4,7 @@ require('dotenv').config();
 
 const prefix = '$';
 const Reddit = require('./src/utils/reddit.js');
+const Dropbox = require('./src/utils/dropbox.js');
 const Discord = require('discord.js');
 const fs = require('fs');
 
@@ -27,6 +28,11 @@ for (const file of cmdFiles) {
  */
 client.on('ready', () => {
 	console.log('Running...');
+
+	// Backup 'store.json' to dropbox every 30 minutes.
+	setInterval(() => {
+		Dropbox.uploadStore();
+	}, 30 * 60 * 1000);
 });
 
 // Create an event listener for messages.

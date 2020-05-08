@@ -1,10 +1,11 @@
 const fs = require('fs');
 const jsonfile = require('jsonfile');
+const Dropbox = require('../utils/dropbox.js');
 const Discord = require('discord.js');
 
 const store_db = (__dirname + '/../../data/store.json');
 if (!fs.existsSync())
-	jsonfile.writeFileSync(store_db, {});
+	Dropbox.downloadStore(); // download backup 'store.json' from dropbox.
 
 module.exports = {
 	name: 'store',

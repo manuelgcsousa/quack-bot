@@ -26,6 +26,8 @@
     "axios": "^0.19.2",
     "discord.js": "^12.2.0",
     "dotenv": "^8.2.0",
+    "dropbox": "^4.0.30",
+    "isomorphic-fetch": "^2.2.1",
     "jsonfile": "^6.0.1",
     "lyricist": "^2.2.2"
   }
