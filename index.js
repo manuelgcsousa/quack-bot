@@ -29,10 +29,10 @@ for (const file of cmdFiles) {
 client.on('ready', () => {
 	console.log('Running...');
 
-	// Backup 'store.json' to dropbox every 30 minutes.
+	// Backup 'store.json' to dropbox every 60 minutes.
 	setInterval(() => {
 		Dropbox.uploadStore();
-	}, 30 * 60 * 1000);
+	}, 60 * 60 * 1000);
 });
 
 // Create an event listener for messages.
