@@ -22,7 +22,7 @@
   },
   "homepage": "https://github.com/MGCSousa/quack-bot#readme",
   "dependencies": {
-    "aws-sdk": "^2.666.0",
+    "aws-sdk": "^2.814.0",
     "axios": "^0.19.2",
     "discord.js": "^12.2.0",
     "dotenv": "^8.2.0",
